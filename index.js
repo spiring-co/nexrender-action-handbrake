@@ -42,7 +42,7 @@ module.exports = (job, settings, options, type) => {
                     settings.logger.log(`[${job.uid}] [action-handbrake] erasing input ${input}`)
                     fs.unlinkSync(input)
                 }
-
+                job.output = output
                 settings.logger.log(`[${job.uid}] [action-handbrake] encoding complete`)
                 resolve(job);
             })
